@@ -1,0 +1,23 @@
+{
+	"name": "Asciidoc Development",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	// ホストのworkspaceフォルダをコンテナにマウント
+	"workspaceMount": "source=${localWorkspaceFolder}/workspace,target=/workspace,type=bind,consistency=cached",
+	"workspaceFolder": "/workspace",
+
+	// VSCode用の拡張機能
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"asciidoctor.asciidoctor-vscode",
+				"streetsidesoftware.code-spell-checker"
+			]
+		}
+	},
+
+	// ユーザー設定
+	"remoteUser": "node"
+}
