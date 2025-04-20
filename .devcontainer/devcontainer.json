@@ -13,7 +13,9 @@
 		"vscode": {
 			"extensions": [
 				"asciidoctor.asciidoctor-vscode",
-				"streetsidesoftware.code-spell-checker"
+				"streetsidesoftware.code-spell-checker",
+				"mushan.vscode-paste-image",
+				"hediet.vscode-drawio"
 			]
 		}
 	},
