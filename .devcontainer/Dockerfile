@@ -15,9 +15,17 @@ RUN apt-get update -y \
         openjdk-17-jre \
         unzip
 
+# PlantUMLのインストール
+RUN curl -o /usr/local/bin/plantuml.jar http://sourceforge.net/projects/plantuml/files/plantuml.jar/download
+
+# PlantUMLの実行環境を作成
+RUN echo -e '#!/bin/bash\n\njava -jar /usr/local/bin/plantuml.jar "$@"' > /usr/local/bin/plantuml && \
+    chmod +x /usr/local/bin/plantuml
+
 # AsciidoctorとAsciidoctor-PlantUMLのインストール
 RUN apt-get install ruby -y
 RUN gem install asciidoctor asciidoctor-diagram asciidoctor-pdf
+RUN gem install asciidoctor-diagram-plantuml
 
 # 不要なパッケージを削除
 RUN rm -rf /var/lib/apt/lists/*
