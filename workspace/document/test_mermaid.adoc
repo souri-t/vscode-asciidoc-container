@@ -1,0 +1,18 @@
+= Mermaid Diagram Test
+:icons: font
+:source-highlighter: highlightjs
+:diagrams: kroki
+
+This document tests Mermaid diagram integration.
+
+[mermaid]
+....
+graph TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[Car]
+....
+
+If you see a diagram above, Mermaid is working!
