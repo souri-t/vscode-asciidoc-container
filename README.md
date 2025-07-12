@@ -2,7 +2,8 @@
 
 ## 概要
 
-このリポジトリはAsciidocを使用した文書作成のための執筆環境です。VS Code上で効率的に技術文書を作成・管理することができます。
+Asciidocの執筆環境を提供するVSCodeのDevContainersです。  
+必要なツールや設定が整った統一的なコンテナを簡単に構築できます。
 
 ## ディレクトリ構成
 
@@ -25,42 +26,37 @@ workspace/
       410_main.drawio.svg      # メイン画面図
 ```
 
-## 環境構築
+## コンテナ環境
 
-### 必要なツール
+### 執筆環境
 
-- VS Code
-- Asciidoctor
-- Draw.io Integration（画像編集用）
+このコンテナでは以下の執筆環境が提供されます：
 
-### VS Code拡張機能
+#### Asciidoc
+- **Asciidoctor** - Asciidocファイルを処理するための機能
+- **Asciidoctor-PDF** - AsciidocからPDFを生成する機能
+- **Asciidoctor-Diagram** - 図表生成拡張機能
 
-以下の拡張機能をインストールすることをお勧めします：
+#### PlantUML
+- **ローカルPlantUML環境** - 外部サーバーを使用せず、コンテナ内でPlantUML図表を生成
+- **Java 17 + PlantUML JAR** - コンテナ内にPlantUMLが完全にインストール済み
+- **Graphviz** - PlantUMLの図表レンダリングに必要なライブラリ
 
-- AsciiDoc
-- Draw.io Integration
-- Paste Image
-- Code Spell Checker
+PlantUMLで作成した図表はすべてコンテナ内で処理されるため、インターネット接続やセキュリティ上の懸念なく安全に利用できます。
+
+### VSCode拡張機能
+
+コンテナでは以下の拡張機能がインストールされます。
+
+- **asciidoctor.asciidoctor-vscode** - Asciidocファイルの編集とプレビュー機能
+- **streetsidesoftware.code-spell-checker** - スペルチェック機能
+- **mushan.vscode-paste-image** - 画像の貼り付け機能
+- **hediet.vscode-drawio** - Draw.io図表の編集機能
 
 ## 使い方
 
-1. `index.adoc`がメインドキュメントです。このファイルが他のコンポーネントファイルをインクルードしています。
-2. 各セクションは`components/`フォルダにある個別のファイルに分割されています。
-3. 図やダイアグラムは`images/`フォルダにDrawio形式で保存されています。
+### Dev Containerの使い方
 
-## ビルド方法
-
-Asciidoctorを使用してHTMLやPDFに変換できます：
-
-```bash
-# HTMLに変換
-asciidoctor document/index.adoc
-
-# PDFに変換
-asciidoctor-pdf document/index.adoc
-```
-
-## ファイル命名規則
-
-- ドキュメントファイル：`NNN_name.adoc`（NNNは連番）
-- 画像ファイル：対応するドキュメントと同じ番号を使用 `NNN_name.drawio.svg`
+1. VSCodeでこのディレクトリを開きます。
+2. 画面左下の「Reopen in Container」または「Dev Containerで再度開く」をクリックします。
+3. 自動的に必要な環境がセットアップされ、Asciidocの執筆やプレビューが可能になります。（[コンテナ移動後の使い方](./workspace//README.md) ）
