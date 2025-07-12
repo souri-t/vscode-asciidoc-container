@@ -38,8 +38,8 @@ workspace/
 - **Asciidoctor-Diagram** - 図表生成拡張機能
 
 #### PlantUML
-- **ローカルPlantUML環境** - 外部サーバーを使用せず、コンテナ内でPlantUML図表を生成
-- **Java 17 + PlantUML JAR** - コンテナ内にPlantUMLが完全にインストール済み
+- **PlantUML** - 外部サーバーを使用せず、コンテナ内でPlantUML図表を生成する環境
+- **Java 17(OpenJDK)** - PlantUML生成に必要なJava実行環境
 - **Graphviz** - PlantUMLの図表レンダリングに必要なライブラリ
 
 PlantUMLで作成した図表はすべてコンテナ内で処理されるため、インターネット接続やセキュリティ上の懸念なく安全に利用できます。
@@ -59,4 +59,4 @@ PlantUMLで作成した図表はすべてコンテナ内で処理されるため
 
 1. VSCodeでこのディレクトリを開きます。
 2. 画面左下の「Reopen in Container」または「Dev Containerで再度開く」をクリックします。
-3. 自動的に必要な環境がセットアップされ、Asciidocの執筆やプレビューが可能になります。（[コンテナ移動後の使い方](./workspace//README.md) ）
+3. 自動的に必要な環境がセットアップされ、Asciidocの執筆やプレビューが可能になります。[（コンテナ移動後の使い方）](./workspace/README.md) 
