@@ -12,6 +12,9 @@ CSSスタイルシートに基づいた文書レイアウトを実現するた�
 ```
 asciidoctor -a stylesheet=style.css -r asciidoctor-diagram -o ./output/index.html ./document/index.adoc
 ```
+```
+asciidoctor-pdf -a scripts=cjk -a pdf-theme=./theme/document-theme.yml index.adoc
+```
 
 解説：
 - `-a stylesheet=style.css`: カスタムCSSスタイルシートを適用します
