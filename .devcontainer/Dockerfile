@@ -13,7 +13,9 @@ RUN apt-get update -y \
         zip \
         graphviz \
         openjdk-17-jre \
-        unzip
+        unzip \
+        default-jre \ 
+        fonts-ipafont
 
 # PlantUMLのインストール
 RUN curl -o /usr/local/bin/plantuml.jar http://sourceforge.net/projects/plantuml/files/plantuml.jar/download
