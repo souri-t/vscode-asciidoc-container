@@ -38,7 +38,7 @@
 :title-page:
 :revdate: {docdate}
 :revnumber: 1.0
-:author: システム開発チーム
+:author: システム開発株式会社
 
 == 概要
 
