@@ -5,27 +5,6 @@
 Asciidocの執筆環境を提供するVSCodeのDevContainersです。  
 必要なツールや設定が整った統一的なコンテナを簡単に構築できます。
 
-## ディレクトリ構成
-
-```
-workspace/
-  README.md          # 本ファイル
-  document/          # 文書格納フォルダ
-    index.adoc       # メインドキュメント
-    style.css        # スタイルシート
-    components/      # 文書コンポーネント
-      100_background.adoc  # 背景
-      200_architecture.adoc # アーキテクチャ
-      300_function.adoc    # 機能説明
-      400_screen.adoc      # 画面説明
-      410_main.adoc        # メイン画面
-      500_glossary.adoc    # 用語集
-    images/          # 画像ファイル
-      210_hardware.drawio.svg  # ハードウェア構成図
-      220_software.drawio.svg  # ソフトウェア構成図
-      410_main.drawio.svg      # メイン画面図
-```
-
 ## コンテナ環境
 
 ### 執筆環境
