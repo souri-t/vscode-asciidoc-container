@@ -1,0 +1,32 @@
+# OS固有ファイル
+.DS_Store
+Thumbs.db
+
+# バックアップファイル
+*~
+*.swp
+*.swo
+
+# ログファイル
+*.log
+
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+
+# Node.js
+node_modules/
+.asciidoctor/
+
+# AsciiDocビルド成果物
+*.html
+*.pdf
+*.docx
+*.epub
+*.mobi
+
+# その他
+.env
+.idea/
+.vscode/
+*.bak
