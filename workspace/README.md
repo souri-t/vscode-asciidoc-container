@@ -1,33 +1,36 @@
-# ドキュメント生成ツール
+
+# AsciiDocドキュメント生成ツール
 
 ## 概要
-このツールはAsciidoctorを使用してドキュメントをHTML形式に変換します。  
-CSSスタイルシートに基づいた文書レイアウトを実現するためPDF形式ではなくHTML形式で出力します。
-最終的にPDFに変換したい場合はブラウザでHTMLを開いた後、ブラウザの機能でPDFに変換することを勧めます。
+このワークスペースは、AsciiDoc形式のドキュメントを効率的に作成・管理し、HTMLおよびPDF形式で出力するためのツール群を提供します。
+ソースコードから外部設計書を自動生成するプロンプトも含まれています。
 
-## 使い方
+## 特徴
+- AsciiDoc記法による高品質なドキュメント作成
+- PlantUMLによる図表生成対応
+- HTML・PDF両形式への出力
+- テーマや画像ディレクトリのカスタマイズ対応
 
-### HTMLドキュメントの生成
-以下のコマンドを実行して、Asciidoctorドキュメントを変換します。
-```
-asciidoctor -a stylesheet=style.css -r asciidoctor-diagram -o ./output/index.html ./document/index.adoc
-```
-```
-asciidoctor-pdf -a scripts=cjk -a pdf-theme=./theme/document-theme.yml index.adoc
-```
+## ドキュメントファイル生成コマンド
 
-解説：
-- `-a stylesheet=style.css`: カスタムCSSスタイルシートを適用します
-- `-r asciidoctor-diagram`: 図表をサポートするプラグインを読み込みます
-- `-o ./output/index.html`: 出力先のHTMLファイルを指定します
-- `./document/index.adoc`: 入力となるAsciidoctorソースファイルです
-
-### 出力結果のアーカイブ作成
-変換したファイルをZIPアーカイブに保存するには以下のコマンドを実行します：
+### HTML形式で生成
 ```
-mkdir -p ./archive && zip -r ./archive/output.zip ./output/
+asciidoctor -b html5 -r asciidoctor-diagram sample.adoc
 ```
 
-解説：
-1. `mkdir -p ./archive`: アーカイブディレクトリを作成します（存在しない場合）
-2. `zip -r ./archive/output.zip ./output/`: outputディレクトリの内容をZIPアーカイブに圧縮します
+### PDF形式で生成
+```
+asciidoctor-pdf -r asciidoctor-diagram sample.adoc
+```
+
+## 仕様書生成プロンプトについて
+
+本ワークスペースには、指定したフォルダ内のソースコードを解析し、外部設計書を自動生成するプロンプトが含まれています。
+
+### プロンプトの使い方
+
+1. Copilotのチャットにて以下のコマンドを入力すると、プロンプトがソースコードを解析し、外部設計書をAsciiDoc形式で生成します。
+
+```command
+/write-ed-spec [ドキュメント生成したいアプリのフォルダ名]
+```
